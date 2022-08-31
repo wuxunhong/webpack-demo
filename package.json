@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack-dev-server",
     "build": "rm -rf dist && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -28,6 +29,6 @@
     "stylus-loader": "^3.0.2",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.10",
-    "webpack-dev-server": "^3.9.0"
+    "webpack-dev-server": "3"
   }
 }
