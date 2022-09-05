@@ -20,7 +20,44 @@ module.exports = {
       title: '小吴',
       template: 'src/assets/index.html'
     }),
-  ]
+  ],
+  module: {
+    rules: [
+      {
+        test: /\.(png|svg|jpg|gif)$/,
+        use: ["file-loader"]
+      },
+      {
+        test: /\.styl$/,
+        loader: [
+          "style-loader",
+          "css-loader",
+          "stylus-loader",
+        ]
+      },
+      {
+        test: /\.less$/i,
+        loader: [
+          // compiles Less to CSS
+          "style-loader",
+          "css-loader",
+          "less-loader",
+        ],
+      },
+      {
+        test: /\.scss$/,
+        use: [
+          "style-loader", // 将 JS 字符串生成为 style 节点
+          "css-loader", // 将 CSS 转化成 CommonJS 模块
+          {
+            loader: "sass-loader",
+            options: {
+              implementation: require("dart-sass")
+            },// 将 Sass 编译成 CSS，默认使用 Node Sass
+          }
+        ]
+      }]
+  }
 };
 
 
